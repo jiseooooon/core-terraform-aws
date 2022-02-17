@@ -1,6 +1,6 @@
  variable "ec2_name" {
    description = "ec2 instance tag Name"
-   default = "DevOS_terraform_by hyein (Core)"
+   default = "DevOS_terraform_by hyein (Core) - 생성확인"
  }
 
  variable "subnet_id" {
