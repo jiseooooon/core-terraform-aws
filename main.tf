@@ -19,5 +19,6 @@ resource "aws_instance" "aws-ec2" {
   subnet_id=var.subnet_id
   tags = {
     Name = var.ec2_name
+    SWQA = "DevOps"
    }
 }
