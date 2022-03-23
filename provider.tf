@@ -3,6 +3,5 @@ provider "aws" {
   default_tags {
     tags = {
       SWQA = "DevOps"
-      Name = "terraform_provisioning(core)_HI"
     }
 }
