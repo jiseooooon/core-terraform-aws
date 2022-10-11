@@ -2,13 +2,23 @@ data "aws_caller_identity" "current" {}
 
 data "aws_ami" "ec2_instance" {
   most_recent = true
+  owners = ["amazon"]
+  filter {
+    name = "name"
+    values = ["amzn2-ami-kernel-5.10-hvm-2.0*"]
+  }
 
   filter {
     name = "virtualization-type"
     values = ["hvm"]
   }
-  owners = ["${data.aws_caller_identity.current.account_id}"]
+
+  filter {
+    name = "root-device-type"
+    values = ["ebs"]
+  }
 }
+
 
 resource "aws_instance" "aws-ec2" {
   ami = data.aws_ami.ec2_instance.id
